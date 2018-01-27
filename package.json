@@ -39,7 +39,7 @@
     "image-downloader": "^3.3.0",
     "imagemagick": "^0.1.3",
     "moment-timezone": "^0.5.14",
-    "node-i18n": "^0.1.0",
+    "node-i18n": "github:eslachance/node-i18n",
     "parse-duration": "^0.1.1",
     "passport": "^0.4.0",
     "passport-discord": "^0.1.3",
