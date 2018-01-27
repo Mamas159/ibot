@@ -92,6 +92,6 @@ module.exports.load = () => {
     cert: readFileSync('/home/idroid/dashboard_certs/dashboard.crt'),
   }, app).listen(client.config.dashboard.port, (err) => {
     if (err) console.error(err);
-    else console.log(`[Express HTTPS] Listening on ${client.config.dashboard.portHttps}`);
+    else console.log(`[Express HTTPS] Listening on ${client.config.dashboard.port}`);
   });
 };
