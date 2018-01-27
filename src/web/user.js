@@ -10,7 +10,7 @@ router.use('/:id', (req, res) => {
       let lastactive = 'No information';
       if (client.lastactive.has(user.id)) {
         const time = parseInt(client.lastactive.get(user.id));
-        lastactive = timeago().ago(time);
+        lastactive = timeago.ago(time);
       }
 
       res.status(200).render('user', {

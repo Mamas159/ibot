@@ -40,7 +40,7 @@ exports.execute = async (client, ctx) => {
   let lastactive = 'No information';
   if (client.lastactive.has(member.id)) {
     const time = parseInt(client.lastactive.get(member.id));
-    lastactive = timeago().ago(time);
+    lastactive = timeago.ago(time);
   }
 
   /* Roles */
