@@ -90,13 +90,8 @@ module.exports.load = () => {
   module.exports.httpsServer = https.createServer({
     key: readFileSync('/home/idroid/dashboard_certs/dashboard.pem'),
     cert: readFileSync('/home/idroid/dashboard_certs/dashboard.crt'),
-  }, app).listen(client.config.dashboard.portHttps, (err) => {
+  }, app).listen(client.config.dashboard.port, (err) => {
     if (err) console.error(err);
     else console.log(`[Express HTTPS] Listening on ${client.config.dashboard.portHttps}`);
-  });
-  
-  module.exports.httpServer = app.listen(client.config.dashboard.portHttp, (err) => {
-    if (err) console.error(err);
-    else console.log(`[Express HTTP] Listening on ${client.config.dashboard.portHttp}`);
   });
 };
