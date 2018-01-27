@@ -11,10 +11,6 @@ const botUtil = {
     snekfetch.post(`https://discordbots.org/api/bots/${client.user.id}/stats`, { headers: { Authorization: client.config.api.discordbots_org } })
       .send({ server_count: client.guilds.size })
       .catch(r => console.log('[DiscordBots.org] Failed to update!', r.body));
-
-    snekfetch.post(`https://ls.terminal.ink/api/v1/bots/${client.user.id}`, { headers: { Authorization: client.config.api.lsterminalink_api } })
-      .send({ server_count: client.guilds.size })
-      .catch(r => console.log('[ls.terminal.ink] Failed to update!', r.body));
   },
 
   reminderTimeout(data) {
