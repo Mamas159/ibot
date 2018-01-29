@@ -32,8 +32,7 @@ module.exports = async (client, oldUser, newUser) => {
       .write(`./tmp/${timestamp}_${oldUser.id}_final.png`, () => {});
   }
 
-  for (const guild of mutualGuilds) {
-    const config = client.servers.get(guild.id);
+  for (let i = 0, config = client.servers.array()[i]; i < mutualGuilds.size; i += 1) {
     if (config.switch_serverlog === 1) {
       const serverlogChannel = guild.channels.get(config.channel_serverlog);
       if (!serverlogChannel) return;
