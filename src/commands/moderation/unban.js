@@ -12,7 +12,9 @@ exports.execute = async (client, ctx) => {
     else if (filtered.size === 1) user = filtered.first().user;
     else return ctx.channel.send(client.findersUtil.formatUsers(client, filtered));
 
-    ctx.guild.unban(user.id, `[UNBAN] ${ctx.author.tag}: ${reason}`).then(() => {
+    ctx.guild.members.unban(user.id, {
+      reason: `[UNBAN] ${ctx.author.tag}: ${reason}`,
+    }).then(() => {
       const config = client.servers.get(ctx.guild.id);
       config.moderation.push({
         ACTION: 'UNBAN',
