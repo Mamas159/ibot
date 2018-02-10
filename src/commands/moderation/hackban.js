@@ -27,7 +27,7 @@ exports.execute = async (client, ctx) => {
 
     return ctx.channel.send(client.I18n.translate`✅ Hackbanned **${user.tag}**!`);
   }).catch((e) => {
-    ctx.channel.send(client.I18n.translate`❌ An error has occured! You might have put a wrong user ID.`); console.error(e);
+    ctx.channel.send(client.I18n.translate`❌ An error has occured! You might have put a wrong user ID.`);
   });
 };
 

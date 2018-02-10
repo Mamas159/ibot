@@ -18,8 +18,8 @@ exports.execute = async (client, ctx) => {
       modMessage.content = modMessage.content.replace(oldReason, reason);
       modMessage.edit(modMessage.content).then(() => {
         ctx.channel.send(client.I18n.translate`✅ Reason changed for case ${ctx.args[0]}!`);
-      }).catch(e => console.log(e.stack));
-    }).catch(e => console.log(e.stack));
+      });
+    });
   } else {
     ctx.channel.send(client.I18n.translate`❌ No record found matching ID \`${ctx.args[0]}\`!`);
   }

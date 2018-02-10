@@ -58,7 +58,7 @@ exports.execute = async (client, ctx) => {
     client.botUtil.reminderTimeout(client, client.timeout.get(count));
 
     return ctx.channel.send(client.I18n.translate`✅ Banned **${member.user.tag}**!`);
-  }).catch((e) => { ctx.channel.send(client.I18n.translate`❌ An error has occured! Please retry.`); console.error(e); });
+  }).catch(e => ctx.channel.send(client.I18n.translate`❌ An error has occured! Please retry.`));
 };
 
 exports.conf = {

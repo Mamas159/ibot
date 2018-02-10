@@ -36,7 +36,7 @@ module.exports = async (client, ctx) => {
   }
 
   /* PREVENT IGNORED CHANNELS */
-  try { if (config.ignored_channels.indexOf(ctx.channel.id) !== -1) return; } catch (e) { console.log('guild: ' + ctx.guild.name + ' id: ' + ctx.guild.id) }
+  if (config.ignored_channels.indexOf(ctx.channel.id) !== -1) return;
 
   /* CLEVERBOT */
   if (client.cleverbot && (ctx.content.indexOf(`<@${client.user.id}>`) === 0 || ctx.content.indexOf(`<@!${client.user.id}>`) === 0)) {
