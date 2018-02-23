@@ -35,11 +35,18 @@ module.exports = async (client, ctx) => {
     });
   }
 
+  const activeGuilds = client.stats.get('active');
+
   /* PREVENT IGNORED CHANNELS */
   if (config.ignored_channels.indexOf(ctx.channel.id) !== -1) return;
 
   /* CLEVERBOT */
   if (client.cleverbot && (ctx.content.indexOf(`<@${client.user.id}>`) === 0 || ctx.content.indexOf(`<@!${client.user.id}>`) === 0)) {
+    if (!activeGuilds.includes(ctx.guild.id)) {
+      activeGuilds.push(ctx.guild.id);
+      client.stats.set('active', activeGuilds);
+    }
+
     client.I18n.use(config.locale);
 
     /* COOLDOWN */
@@ -111,6 +118,11 @@ module.exports = async (client, ctx) => {
       }
     }
   } else {
+    if (!activeGuilds.includes(ctx.guild.id)) {
+      activeGuilds.push(ctx.guild.id);
+      client.stats.set('active', activeGuilds);
+    }
+
     /* HANDLING */
     ctx.args = ctx.content.split(/ +/g);
     const command = ctx.args.shift().slice(prefix.length).toLowerCase();
