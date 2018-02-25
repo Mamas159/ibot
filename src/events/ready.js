@@ -6,7 +6,6 @@ module.exports = async (client) => {
 
   /* GAME & STATS */
   client.botUtil.updateGame(client);
-  client.botUtil.updateBotStats(client);
 
   /* WE LOAD THE DASHBOARD */
   dashboard.load();

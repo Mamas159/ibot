@@ -164,7 +164,8 @@
     "Translated text ({0})": "Übersetzter text ({0})",
     "<:translate:329193279595741185> Translation finished!": "<:translate:329193279595741185> Übersetzung ist Fertig!",
     "❌ An error occured while translating! Please check you are using a good language code.": "❌ Während der Übersetzung ist ein fehler passiert.",
-
+    "❌ You must specify a **target language** (ISO 639-1 format) and a **text to translate**.": "❌ You must specify a **target language** (ISO 639-1 format) and a **text to translate**.",
+  
     "_note19": "user",
     "<:online:334859814410911745> Online": "<:online:334859814410911745> Online",
     "<:away:334859813869584384> Absent": "<:away:334859813869584384> Untätig",

@@ -7,12 +7,6 @@ const botUtil = {
     client.user.setActivity(`Type ${client.config.discord.prefix}help ! On ${client.guilds.size} servers with ${client.users.size} users.`);
   },
 
-  updateBotStats() {
-    snekfetch.post(`https://discordbots.org/api/bots/${client.user.id}/stats`, { headers: { Authorization: client.config.api.discordbots_org } })
-      .send({ server_count: client.guilds.size })
-      .catch(r => console.log('[DiscordBots.org] Failed to update!', r.body));
-  },
-
   reminderTimeout(data) {
     client.timeout.delete(data.remindid);
     if (data.type === 'POLL') {

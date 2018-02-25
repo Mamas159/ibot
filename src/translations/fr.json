@@ -168,7 +168,8 @@
     "All information provided by Google Translate API.": "La traduction est fournie par l'API Google Traduction.",
     "<:translate:329193279595741185> Translation finished!": "<:translate:329193279595741185> Traduction terminée !",
     "❌ An error occured while translating! Please check you are using a good language code.": "❌ Une erreur est survenue pendant la traduction ! Vérifiez que vous utilisez un code langue correct.",
-
+    "❌ You must specify a **target language** (ISO 639-1 format) and a **text to translate**.": "❌ Vous devez spécifier une **langue cible** (format ISO 639-1) et un **texte à traduire**.",
+  
     "_note19": "user",
     "<:online:334859814410911745> Online": "<:online:334859814410911745> En ligne",
     "<:away:334859813869584384> Absent": "<:away:334859813869584384> Absent",
