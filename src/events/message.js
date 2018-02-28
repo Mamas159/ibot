@@ -13,6 +13,7 @@ module.exports = async (client, ctx) => {
 
   /* SETTINGS */
   const config = client.servers.get(ctx.guild.id);
+  if (!config) return;
 
   /* AFK */
   if (client.afk.has(ctx.author.id)) {

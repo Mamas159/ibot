@@ -15,9 +15,8 @@ module.exports = async (client, guild) => {
     if (err) console.error(err);
   });
 
-  /* GAME & DISCORD BOTS STATS */
+  /* GAME */
   client.botUtil.updateGame(client);
-  client.botUtil.updateBotStats(client);
 
   /* SERVER CONFIGURATION */
   if (!client.servers.has(guild.id)) {
