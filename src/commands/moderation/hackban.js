@@ -5,7 +5,7 @@ exports.execute = async (client, ctx) => {
   let reason = ctx.args.join(' ').split(' for ').slice(1).join(' for ');
   if (!reason) reason = client.I18n.translate`no reason specified`;
 
-  if (ctx.member.id === id) return ctx.channel.send(client.I18n.translate`❌ You cannot kick yourself!`);
+  if (ctx.member.id === id) return ctx.channel.send(client.I18n.translate`❌ You cannot ban yourself!`);
   if (ctx.guild.members.has(id)) return ctx.channel.send(client.I18n.translate`❌ The user you try to hackban is on this server (**${ctx.guild.members.get(id).user.tag}**), use the ban command instead.`);
 
   ctx.guild.members.ban(id, {
