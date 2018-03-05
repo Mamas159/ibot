@@ -1,4 +1,4 @@
-const config = require('../config.json');
+const botConfig = require('../config.json');
 const fs = require('fs');
 const mtz = require('moment-timezone');
 const Discord = require('discord.js');
@@ -66,8 +66,8 @@ module.exports = async (client, ctx) => {
       ctx.channel.startTyping();
       snekfetch.post('https://cleverbot.io/1.0/ask')
         .send({
-          user: config.api.cleverbot_user,
-          key: config.api.cleverbot_key,
+          user: botConfig.api.cleverbot_user,
+          key: botConfig.api.cleverbot_key,
           nick: 'iBot',
           text: question,
         })
