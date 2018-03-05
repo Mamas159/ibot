@@ -1,13 +1,15 @@
-const Cleverbot = require('cleverbot.io');
+const snekfetch = require('snekfetch');
 const config = require('../config.json');
 
-const bot = new Cleverbot(config.api.cleverbot_user, config.api.cleverbot_key);
-
-bot.create(() => {
-  bot.setNick('iBot');
-});
-
-module.exports = bot;
+snekfetch.post('https://cleverbot.io/1.0/create')
+  .send({
+    user: config.api.cleverbot_user,
+    key: config.api.cleverbot_key,
+  })
+  .then((response) => {
+    const parsed = JSON.parse(response.text);
+    if (parsed.status !== 'success') return console.error(parsed.status);
+  });
 
 /* module.exports = {
   ask: (question, callback) => {

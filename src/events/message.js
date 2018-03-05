@@ -2,6 +2,7 @@ const bot = require('../helpers/cleverbot');
 const fs = require('fs');
 const mtz = require('moment-timezone');
 const Discord = require('discord.js');
+const snekfetch = require('snekfetch');
 const { cooldown } = require('../helpers/botUtil');
 
 /* eslint-disable consistent-return no-param-reassign */
@@ -63,16 +64,27 @@ module.exports = async (client, ctx) => {
       ctx.channel.send(client.I18n.translate`✅ Your conversation has been erased!`);
     } else {
       ctx.channel.startTyping();
-      bot.ask(question, (error, response) => {
-        if (error instanceof Error) throw error;
+      snekfetch.post('https://cleverbot.io/1.0/ask')
+        .send({
+          user: config.api.cleverbot_user,
+          key: config.api.cleverbot_key,
+          nick: 'iBot',
+          text: question,
+        })
+        .then((response) => {
+          const parsed = JSON.parse(response.text);
 
-        cooldown.add(ctx.author.id);
-        setTimeout(() => cooldown.delete(ctx.author.id), 2000);
+          if (parsed.status !== 'success') {
+            ctx.channel.send(parsed.status);
+          } else {
+            cooldown.add(ctx.author.id);
+            setTimeout(() => cooldown.delete(ctx.author.id), 2000);
 
-        ctx.channel.send(response);
-        ctx.channel.stopTyping();
-        fs.appendFile('./logs/cleverbot.txt', `======DONE!======\n[${mtz().tz('UTC').format('DD MM YYYY HH:mm:ss')}] ${ctx.author.tag} (ID:${ctx.author.id}) - Guild: ${ctx.guild.name} (ID:${ctx.guild.id}) - Channel: ${ctx.channel.name} (ID:${ctx.channel.id}) - Question: ${question}\n=> Response: ${response}\n=================`, () => {});
-      });
+            ctx.channel.send(parsed.response);
+            ctx.channel.stopTyping();
+            fs.appendFile('./logs/cleverbot.txt', `======DONE!======\n[${mtz().tz('UTC').format('DD MM YYYY HH:mm:ss')}] ${ctx.author.tag} (ID:${ctx.author.id}) - Guild: ${ctx.guild.name} (ID:${ctx.guild.id}) - Channel: ${ctx.channel.name} (ID:${ctx.channel.id}) - Question: ${question}\n=> Response: ${parsed.response}\n=================`, () => {});
+          }
+        });
     }
   }
 
