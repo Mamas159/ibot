@@ -1,4 +1,4 @@
-const bot = require('../helpers/cleverbot');
+const config = require('../config.json');
 const fs = require('fs');
 const mtz = require('moment-timezone');
 const Discord = require('discord.js');
