@@ -51,4 +51,16 @@ module.exports = async (client) => {
     if (data.end < Date.now()) return client.timeout.delete(index);
     setTimeout(client.botUtil.reminderTimeout(client, data), data.end - Date.now());
   });
+
+  /* CLEVERBOT SHIT */
+  snekfetch.post('https://cleverbot.io/1.0/create')
+    .send({
+      user: config.api.cleverbot_user,
+      key: config.api.cleverbot_key,
+      nick: 'iBot',
+    })
+    .then((response) => {
+      const parsed = JSON.parse(response.text);
+      if (parsed.status !== 'success') return console.error(parsed.status);
+    });
 };
