@@ -1,4 +1,5 @@
 const dashboard = require('../web/index');
+const snekfetch = require('snekfetch');
 
 module.exports = async (client) => {
   /* LOGGING */
