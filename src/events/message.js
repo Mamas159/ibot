@@ -64,7 +64,7 @@ module.exports = async (client, ctx) => {
     } else {
       ctx.channel.startTyping();
       bot.ask(question, (error, response) => {
-        if (error) throw error;
+        if (error instanceof Error) throw error;
 
         cooldown.add(ctx.author.id);
         setTimeout(() => cooldown.delete(ctx.author.id), 2000);
