@@ -1,7 +1,7 @@
 iBot
 ===================
 
-# This project was moved to (https://github.com/iDroid27210/homer)[Homer]. The shown code here is not the ran code on the bot (Homer#7550). Please go on the new repository for any issue or pull request.
+# This project was moved to [Homer](https://github.com/iDroid27210/homer). The shown code here is not the ran code on the bot (Homer#7550). Please go on the new repository for any issue or pull request.
 
 # Presentation
 Hey,  
