@@ -1,5 +1,7 @@
-![iBot](https://cdn.discordapp.com/avatars/305277118105911296/ab983904050480c26b335869e9783009.png?size=32) iBot
+iBot
 ===================
+
+# This project was moved to (https://github.com/iDroid27210/homer)[Homer]. The shown code here is not the ran code on the bot (Homer#7550). Please go on the new repository for any issue or pull request.
 
 # Presentation
 Hey,  
