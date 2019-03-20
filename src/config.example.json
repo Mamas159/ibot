@@ -1,15 +1,15 @@
 {
 	"discord": {
-		"prefix": "",
-		"token": "",
-		"ownerID": "",
+		"prefix": "?",
+		"token": "NTU3NjU3MjQzMTc3NDUxNTkw.D3MWrw.w_f_fpRSGv_DDb3uSRQvOC7-tEQ",
+		"ownerID": "272004278082600960",
 		"commandCategories": []
 	},
 	"api": {
 		"google": "",
 		"youtube": "",
 		"weather": "",
-		"cleverbot": "",
+		"cleverbot": "3hYwQ0KYNyD7pf67e7ZAIqJXxbHFYNvp",
 		"discord_bans": "",
 		"discordbots_org": "",
 		"lsterminalink_api": ""
