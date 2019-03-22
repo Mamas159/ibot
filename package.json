@@ -6,24 +6,6 @@
   "scripts": {
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iDroid27210/ibot.git"
-  },
-  "keywords": [
-    "discord",
-    "bot",
-    "nodejs",
-    "discord.js",
-    "all-in-one",
-    "ibot"
-  ],
-  "author": "iDroid27210",
-  "license": "AGPL-3.0",
-  "bugs": {
-    "url": "https://github.com/iDroid27210/ibot/issues"
-  },
-  "homepage": "https://github.com/iDroid27210/ibot#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cleverbot.io": "^1.0.4",
